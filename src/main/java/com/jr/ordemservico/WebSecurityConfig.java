@@ -49,10 +49,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
             .antMatchers("/", "/index", "/login", "/about", "/signin", "/logout", "/resources/**", "/webjars/**").permitAll()
     		.antMatchers("/home").hasAnyRole(Constantes.PERMISSAO_ADMINISTRADOR, Constantes.PERMISSAO_USUARIO)
-    		.antMatchers("/usuarios/**").hasAnyRole(Constantes.PERMISSAO_ADMINISTRADOR, Constantes.PERMISSAO_USUARIO)
+    		.antMatchers("/usuarios/**").hasAnyRole(Constantes.PERMISSAO_ADMINISTRADOR)
     		.antMatchers("/clientes/**").hasAnyRole(Constantes.PERMISSAO_ADMINISTRADOR, Constantes.PERMISSAO_USUARIO)
     		.antMatchers("/ordens-servico/**").hasAnyRole(Constantes.PERMISSAO_ADMINISTRADOR, Constantes.PERMISSAO_USUARIO)
-    		
+    		.antMatchers("/tipoItem/**").hasAnyRole(Constantes.PERMISSAO_ADMINISTRADOR, Constantes.PERMISSAO_USUARIO)
     		.antMatchers("/items/**").hasAnyRole(Constantes.PERMISSAO_ADMINISTRADOR, Constantes.PERMISSAO_USUARIO)
     		    		
             .and()
